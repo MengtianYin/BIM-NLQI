@@ -1,5 +1,5 @@
 # BIM-NLQI
-This repository includes the data for the research project of BIM-oriented natural language interface (BIM-NLQI). 
+This repository includes the data for the research project of BIM-oriented natural language query interface (BIM-NLQI). 
 The BIM-NLQ dataset is divided into two parts:Part I and Part II.
 Part I is used for framework development. It encompasses 110 natural language queries for Model A (70 from authors and 40 from BIM end-users);
 Par II is used for testing the BIM-NLQI framework. It encompassess 150 natural language queries for Model B,C,D. 
