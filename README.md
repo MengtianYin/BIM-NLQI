@@ -1,5 +1,5 @@
-# BIM-NLQ Dataset for GB-NLQS
-This repository includes the data for the research project of natural language query system for graph-based BIM (GB-NLQS). 
+# BIM-NLQ Dataset for GB-NLQI
+This repository includes the data for the research project of natural language query  for graph-based BIM (GB-NLQS). 
 The BIM-NLQ dataset is divided into two parts:Part I and Part II.
 Part I is used for framework development. It encompasses 110 natural language queries for Model A (70 from authors and 40 from BIM end-users);
 Par II is used for testing the GB-NLQS framework. It encompassess 150 natural language queries for Model B,C,D. 
