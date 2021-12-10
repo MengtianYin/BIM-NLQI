@@ -1,0 +1,61 @@
+1. Design requirement
+Every access staircase in a firefighting and rescue stairway should: 
+(a) have a clear width of not less than 1050 mm and a clear height of not less than 2000 mm;
+(b) be arranged in straight flights without winders and each flight should consist of not more than 16 risers nor less than 2 risers. Treads should be not less than 225 mm wide, measured clear of nosings, and risers should be not more than 175 mm high;
+(c) be provided with handrails on each side of the staircase at a height of not less than 850 mm and not more than 1100 mm above the steps or landings.
+
+2. Translated NLQs and automatically generated SPARQL queries:
+(a) NLQ: The stairs in staircase space that has minimum run width less than 1.050 m or desired stair height less than 2 m.    
+SPARQL query: 
+SELECT ?space5_0 ?stair2_0 ?staircase4_0 ?minimumrunwidth8_0 ?desiredstairheight16_0 
+WHERE{{ ?minimumrunwidth8_0 bimnlq:getpropertydoublevalue ?minimumrunwidth8_0value  .
+FILTER ( ?minimumrunwidth8_0value<1.05) .  ?minimumrunwidth8_0 a ifcowl:IfcProperty .
+?minimumrunwidth8_0 ifcowl:name_IfcProperty/expr:hasString  "Minimum Run Width" .  
+?stair2_0 schm:hasProperty ?minimumrunwidth8_0  . } UNION  
+{ ?desiredstairheight16_0 bimnlq:getpropertydoublevalue ?desiredstairheight16_0value  .
+FILTER ( ?desiredstairheight16_0value<2.0) .  ?desiredstairheight16_0 a ifcowl:IfcProperty .  
+?desiredstairheight16_0 ifcowl:name_IfcProperty/expr:hasString  "Desired Stair Height" .  
+?stair2_0 schm:hasProperty ?desiredstairheight16_0  . }  ?staircase4_0 a ifcowl:IfcLabel . 
+?staircase4_0 expr:hasString "Staircase" . ?space5_0 ifcowl:longName_IfcSpatialStructureElement ?staircase4_0  . 
+?stair2_0 a ifcowl:IfcStair . ?stair2_0 schm:isContainedIn ?space5_0  . ?space5_0 a ifcowl:IfcSpace .}
+
+(b) NLQ1: Stairs in staircase space that have stair flights that are winder or actual number of risers larger than 16 or actual number of risers less than 2 . 
+SPARQL query1: 
+SELECT ?space4_0 ?stair1_0 ?stairflight7_0 ?staircase3_0 ?actualnumberofrisers13_0 ?actualnumberofrisers21_0 ?winder11_0 
+WHERE{ {BIND ( ifcowl:WINDER AS ?winder11_0 ) .  ?stairflight7_0 bimnlq:hastypeenum ?winder11_0  . } UNION  
+{ ?actualnumberofrisers13_0 bimnlq:getpropertyintvalue ?actualnumberofrisers13_0value  .
+FILTER ( ?actualnumberofrisers13_0value>16.0) .  
+?actualnumberofrisers13_0 a ifcowl:IfcProperty . 
+?actualnumberofrisers13_0 ifcowl:name_IfcProperty/expr:hasString  "Actual Number of Risers" .  
+?stairflight7_0 schm:hasProperty ?actualnumberofrisers13_0  . } UNION  
+{ ?actualnumberofrisers21_0 bimnlq:getpropertyintvalue ?actualnumberofrisers21_0value  .
+FILTER ( ?actualnumberofrisers21_0value<2.0) .  ?actualnumberofrisers21_0 a ifcowl:IfcProperty . 
+?actualnumberofrisers21_0 ifcowl:name_IfcProperty/expr:hasString  "Actual Number of Risers" .  
+?stairflight7_0 schm:hasProperty ?actualnumberofrisers21_0  . }  ?staircase3_0 a ifcowl:IfcLabel . 
+?staircase3_0 expr:hasString "Staircase" . ?space4_0 ifcowl:longName_IfcSpatialStructureElement ?staircase3_0  . 
+?stairflight7_0 a ifcowl:IfcStairFlight . ?stair1_0 schm:hasElementDecomposition ?stairflight7_0  . 
+?stair1_0 a ifcowl:IfcStair . ?stair1_0 schm:isContainedIn ?space4_0  . ?space4_0 a ifcowl:IfcSpace .}
+
+NLQ2:The stair flights that have treadlength larger than 0.25 or riserheight more than 0.175 .  " ; 
+SPARQL query2:
+SELECT ?space4_0 ?stair1_0 ?stairflight7_0 ?staircase3_0 ?treadlength11_0 ?riserheight16_0
+WHERE{   { ?treadlength11_0 bimnlq:getpropertydoublevalue ?treadlength11_0value  .
+FILTER ( ?treadlength11_0value>0.25) .  ?treadlength11_0 a ifcowl:IfcProperty .  
+?treadlength11_0 ifcowl:name_IfcProperty/expr:hasString  "TreadLength" .  ?stairflight7_0 schm:hasProperty ?treadlength11_0  . } 
+UNION  { ?riserheight16_0 bimnlq:getpropertydoublevalue ?riserheight16_0value  .FILTER ( ?riserheight16_0value>0.175) . 
+?riserheight16_0 a ifcowl:IfcProperty .  ?riserheight16_0 ifcowl:name_IfcProperty/expr:hasString  "RiserHeight" .  
+?stairflight7_0 schm:hasProperty ?riserheight16_0  . }  ?space4_0 a ifcowl:IfcSpace . ?stair1_0 schm:isContainedIn ?space4_0  . 
+?space4_0 ifcowl:longName_IfcSpatialStructureElement ?staircase3_0  . ?stair1_0 a ifcowl:IfcStair . 
+?stair1_0 schm:hasElementDecomposition ?stairflight7_0  . ?stairflight7_0 a ifcowl:IfcStairFlight . 
+?staircase3_0 a ifcowl:IfcLabel . ?staircase3_0 expr:hasString "Staircase" .}
+
+（c) NLQ: The stairs in staircase space that have railings with height less than 0.85 or height larger than 0.11 meter .
+SPARQL query: 
+SELECT ?space5_0 ?railing8_0 ?stair2_0 ?staircase4_0 ?height10_0 ?height15_0 
+WHERE{   { ?height10_0 bimnlq:getpropertydoublevalue ?height10_0value  .
+FILTER ( ?height10_0value<0.85) .  ?height10_0 a ifcowl:IfcProperty .  ?height10_0 ifcowl:name_IfcProperty/expr:hasString  "Height" . 
+?railing8_0 schm:hasProperty ?height10_0  . } UNION  { ?height15_0 bimnlq:getpropertydoublevalue ?height15_0value  .
+FILTER ( ?height15_0value>0.11) .  ?height15_0 a ifcowl:IfcProperty .  ?height15_0 ifcowl:name_IfcProperty/expr:hasString  "Height" . 
+?railing8_0 schm:hasProperty ?height15_0  . }  ?stair2_0 a ifcowl:IfcStair . ?stair2_0 schm:isContainedIn ?space5_0  . 
+?stair2_0 schm:hasElementDecomposition ?railing8_0  . ?railing8_0 a ifcowl:IfcRailing . ?staircase4_0 a ifcowl:IfcLabel . 
+?staircase4_0 expr:hasString "Staircase" . ?space5_0 ifcowl:longName_IfcSpatialStructureElement ?staircase4_0  . ?space5_0 a ifcowl:IfcSpace .}
