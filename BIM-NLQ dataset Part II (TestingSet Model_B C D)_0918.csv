@@ -1,0 +1,226 @@
+﻿ID,Model ,Sentence 
+1,B,Find the footing at Level 1. 
+2,B,Get all windows placed in Basic Wall:Exterior – Brick on Mtl. Stud: 139883. 
+3,B,Select the space called CMDR OFFICE located at Level 1. 
+4,B,Select all doors that are contained in Basic Wall:Interior – Partition (92mm Stud):171083 
+5,B,Find all spaces connected with the corridor and contained in the first story. 
+6,B,Get all beams whose span is longer than 10 meters at Level 1. 
+7,B,Select the stair that contains Stair:Concrete Pan – 180mm Max Riser 280mm Tread:235743:1. 
+8,B,Return all railings in the Stair:Concrete Pan – 180mm Max Riser 280mm Tread:235743. 
+9,B,Find all walls that Structural Usage = 0 at the second floor.  
+10,B,Find the space next to S-7 STORAGE and MECH RM. 
+11,B,Get the space which is bounded by Basic Wall:Interior – Partition (92mm Stud):232931 and Basic Wall:Interior – Partition (92mm Stud):171159 
+12,B,Get all ceiling coverings with TotalThickness equal to 0.052. 
+13,B,Select the railing with Length larger than 7 meters. 
+14,B,Select all stairs on the first floor. 
+15,B,Get spaces bounded by Basic Wall:Interior - Partition (92mm Stud):173045 
+16,B,Find all doors with Width equal to 1.83 at Level 1. 
+17,B,Select all walls with dimension of Metal – Stud Layer greater than 0.03. 
+18,B,Please select the element with the type Basic Wall:Exterior - Brick on Mtl. Stud:397. 
+19,B,Please tell me the height of the cladding coverings on the 2nd floor?  
+20,B,Find the space next to 222 and 219. 
+21,B,Select all beams on the second level 
+22,B,Find all platform slabs of the stair 233637. 
+23,B,Return all the space boundaries of the space 101 
+24,B,Show small openings whose area is less than 1 m2 
+25,B,Are there load bearing roofs? 
+26,B,Find walls whose thickness is at least 400mm 
+27,B,Find all brick walls 
+28,B,What are the inner construction materials of the wall 139883 
+29,B,Find windows whose sill height is larger than 1.5m 
+30,B,Find the room that has biggest area 
+31,B,Find the surrounding building elements of the space 101 
+32,B,Find external doors whose height is less than 1800 mm 
+33,B,Find windows in level 2 and with a height no smaller than 500mm  
+34,B,Find all brick and concrete walls in the 2nd storey 
+35,B,Select all exterior double doors in the first level 
+36,B,Please select the element with tag 152032.   
+37,B,Find the walls in the MECH RM. 
+38,B,The Space next to the space 201 
+39,B,Find the space boundaries of the WOMENS RR 
+40,B,The base offset of the space 101  
+41,B,Return the GSA BIM Area of 205 
+42,B,Find all masonry brick walls 
+43,B,Return all stairs with tread thickness equal to 50mm 
+44,B,Return all stairs with actual riser height greater than 175mm 
+45,B,Return all stairs with actual number of risers greater than 16 
+46,B,Return the limit offset of space 201. 
+47,B,The space with volume > 70 and area < 30 . Spaces should be located at level 1. 
+48,B,Get slabs that are roof. 
+49,B,Show walls with material of plasterboard. 
+50,B, Walls with plasterborad layer < 0.16 and Metal Stud layer > 0.15.  
+51,B,The exterior windows at the first level. The exterior windows with height larger than 2.0m 
+52,B,The beams located at the level 2. The beams with W=0.44. 
+53,B,The spaces next to the space 102. The windows in that spaces. 
+54,B,The spaces with area smaller than 20 m2.The spaces has external wall. The exterior door in the spaces 
+55,B,The spaces on the second floor . The spaces that are MECH RM . The height of a door in the spaces . 
+56,B,Select the building storey with elevation higher than the elevation of Level 1 and less than the elevation of Roof . 
+57,B,Select the non external walls at level 1 and containing the window that has type of 0915 x 2134mm. 
+58,B,Is there any non bearing slab from Compound Ceiling:Gypsum Board and placed in second story or third story? 
+59,B,Is there any cladding coverings whose offset from level > 2.5 and contained in 2nd floor or 3rd floor? 
+60,B,Is there any Floor:127mm Slab on Grade slabs that are placed in second story and not room bounding and have thickness of 0.127? 
+61,B,List landing slab whose height offset from level > 0.1 and locate at 1st floor or 2nd floor ? 
+62,B,Return all M_Footing-Rectangular:3300 x 3740 x 300mm footings with length > 50 and width <1 and stay at T/FDN. 
+63,B,Return spaces that have GSA BIM Area < 7 square meter or have area less than area of OPS SGT . 
+64,B,Spaces at the Level 2 and have a GSA BIM Area larger than the largest area of spaces at the Level 1 . 
+65,B,Return columns and walls at level 1 or level 2 that have height > 4 meters. 
+66,B,"Find flooring coverings with total thickness of less than 0.06, and area of more than 55, and height offset from level of more than 0.5 ." 
+67,B,Stairs consists of stair flights with walking line offset of less than 0.3 or number of risers of more than 12. Stairs composed of landing slabs . 
+68,B,Find stairs whose railings has a height larger than tread length of the stair flight. The stair flight belongs to the stair.   
+69,B,"Select non structural walls that have the least length, and form boundary of CONFERENCE RM or ENTRY. " 
+70,B,The coverings whose height offseet from level is less than the maximum unconnected height of walls at first floor . The coverings should also be placed the first floor.  
+71,B,The room has a category code of 13-852111 and contain stairs equiped with railings. The height of railings are higher than 1.5 meter. 
+72,B,The room of which the GSA BIM Area is less than GSA BIM Area of room S101 . The limit offset of the room is not less than 2 meters.  
+73,B,Window and doors in the space with smallest perimeter and located at Level 2 . Doors should be double swing left.  
+74,B,Find all stairs whose level has elevation lower than elevation of T/FDN. The actual number of risers of stairs should be less than 25.0 . 
+75,B,wall and door are placed in the level with the highest elevation. The door should have head height > 2.0 or trim width < 0.076. 
+1,C,Find all the load bearing beams with slope = 0. 
+2,C,All the doors at ground floor.  
+3,C,Find all the windows located at the first floor 
+4,C,Columns at Existing Garage - Roof Level. 
+5,C,The windows with height larger than 6 
+6,C,The external windows placed at Existing Garage - 3rd Level 
+7,C,Find the doors made of Door - H.M.Panel and located at first floor.  
+8,C,Find the beams that are load bearing or not external. 
+9,C,Select the doors with width of 1.5 
+10,C,Return ceiling coverings whose gross ceiling area is larger than 150 SQUARE FOOT 
+11,C,Get the slab whose perimeter is 31.1477821452127 FOOT 
+12,C,Find the doors with height larger than 2 
+13,C,Select the coverings with Metal - Stud Layer = 0.125. 
+14,C,Select the door with the maximum height. 
+15,C,Select beams with span >70 at first floor. 
+16,C,Select slab with largest gross area. 
+17,C,Select walls containing masonry brick. 
+18,C,Select windows within the wall 1235245. 
+19,C,Find the loadbearing columns with gross volume > 200 CUBIC FOOT. 
+20,C,Return the spaces connecting to FUEL VAULT. 
+21,C,Find all rooms with net floor area larger than 20m square 
+22,C,Select all floors with exterior windows 
+23,C,List all windows of the building 
+24,C,Retrieve Walls whose length is larger than length of wall 1208555. 
+25,C,Find the storey that contains the beam 1301059. 
+26,C,List the spaces next to the room 07. 
+27,C,Find the single swing left door which is made by glass  
+28,C,List the spaces that constitue Exist Garage - Ground Level 
+29,C,Get the space that is near GENERATOR ROOM #2  
+30,C,Select the footings from SE Stair Footing:SE Stair Footing 
+31,C,Find walls with grossvolume over 20 or width below 1.5 
+32,C,List all object with the reference of Concrete-Square-Column:24 x 24. 
+33,C,Find external beams. 
+34,C,Find the railings in Railing:Garage Security Grille 
+35,C,Select doors placed in shear walls  
+36,C,Find the window that has largest area in floor 2  
+37,C,Find the load bearing beam with the largest gross volume and in Existing Garage - 1st Level 
+38,C,Return the area of windows placed at wall 1235245  
+39,C,Get the railing with minimum height  
+40,C,Find the level contains wall . The wall has the maximum length in the building . 
+41,C,"Find the walls from Basic Wall:(Existing) Exterior - Brick Veneer 3 5/8\""" 
+42,C,Return the headroom of space 03 
+43,C,Return the Height and Width of all selected doors with width less than 3 foot. 
+44,C,Select all structure walls 
+45,C,"select all walls with materials ""Masonry - Brick""." 
+46,C,select all walls with materials of Concrete - Cast-in-Place Concrete. 
+47,C,select all loadbearing and external walls at Level 1. 
+48,C,"select all external plates from 1\"" Insulated Clear Glass." 
+49,C,The railings with height = 4. 
+50,C,The doors on ground level . The doors built in the exterior wall. 
+51,C,The beams on the third level. The spans of beams less than 8m 
+52,C,"The windows on the fourth level and fifth level. The object type of the windows is 6'4"" x 6'0""." 
+53,C,The spaces are on the ground level. The space with net floor area larger than net floor area of room 03 . The doors of the spaces. 
+54,C,The beams on the first level. The beams with spans larger than 40m. The slopes of the beams are larger than 0.5. 
+55,C,Get load bearing columns with gross volume greater than gross volume of the column 1207318 . 
+56,C,Load bearing columns that are made of Concrete - Cast-in-Place Concrete and placed in ground floor or first floor. 
+57,C,Walls bound FUEL VAULT and have height larger than the maximum height of spaces in the second floor . 
+58,C,Find walls with GrossVolume larger than the largest GrossVolume of columns contained in Ground Floor . 
+59,C,Find walls with GrossSideArea of less than area of any windows of FUEL VAULT. 
+60,C,"Walls are not load bearing, and extend to structure, and placed windows that have a height < 10 foot or width > 6 foot. " 
+61,C,Retrieve external and non load bearing walls with largest GrossFootPrintArea and among the type of Basic Wall:Interior - (S4) 2 hour rated shaft wall . 
+62,C,"find walls stayed at second floor, and containing doors that are single swing left, and with type of basic wall:interior - rated 1-hr (92mm stud):128426," 
+63,C,"Find 18 x 30 windows at Exist Garage - Ground Level, and have an height of 8 foot or width of 5 foot." 
+64,C,Find slabs whose GrossArea is less than the maximum GrossCeilingArea of coverings that are typed ceiling and installed in 1st Floor .  
+65,C,"Return the maximum area of windows placed at Basic Wall:(existing)Exterior - Brick on Conc - 1'-3"":1235245 or Basic Wall:(Existing) Exterior - Brick Veneer 3 5/8"":1239595 . The windows should not extend to structure. " 
+66,C,Select the non external window with largest width and placed at Existing Garage - 3rd Level or Existing Garage - 4th Level . 
+67,C,Select load bearing beams with reference of 05_HSS-Hollow Structural Section:HSS6x6x5/16 and located at Existing Garage - 4th Level . Beams should have span of less than 2 and slope = 0 . 
+68,C,"List non external railings classified as Railing:Garage Security Grille 6'-10"" High and have a height of higher than the height of railing:garage security grille 6-10 high:1321334 ." 
+69,C,Select the railing contained in Exist Garage - Ground Level and have a height of higher than the maximum height of walls .  
+70,C,Collect external curtain walls from Curtain Wall:(Existing) Curtainwall - Blank and contained in Exist Garage - Ground Level or second floor . 
+71,C,curtain walls belong to curtain wall:(existing) curtainwall - blank and contain members which are mullions and have span of more than 17.00. The members are not load bearing. 
+72,C,Find non external curtain walls decomposed by load bearing plates and mullion members. The span of the member should not greater than 10.  
+73,C,Ceiling elements with type of Compound Ceiling:Rated Shaft and have GrossCeilingArea > 150 or total thickness < 3.0 . 
+74,C,"Non load bearing slabs at ground floor have pitchangle = 0, and made of concrete - cast-in-place concrete, and categorized as floor:concrete slab - 6\\\"". The gross area of slab should be more than the gross area of Floor:Concrete Slab - 5\"":1225119." 
+75,C,Show me external doors that have width equaling to 915 mm and at second level or third level. The shoulder height of the door is less than 2.0 meters. 
+1,D,Non flipping windows at ground floor. 
+2,D,Show walls at the 2nd story.  
+3,D,Find all the windows without extra frame and  located at the first floor. 
+4,D,Columns at ground floor or first floor 
+5,D,The floor that the column called Pile - 011 locate? 
+6,D,The spaces that the category is exit lobby. 
+7,D,The external windows has uniform frame widith. 
+8,D,Find the wall made of concrete - structural. 
+9,D,Find the stair that has No. of Risers = 18 and Rail = 1. 
+10,D,The space with number of doors = 1 and number of corners = 5.  
+11,D,Return slab whose gross area is larger than 300 SQUARE FOOT 
+12,D,Get the slab whose perimeter is the largest. 
+13,D,Find the doors whose threshold metal surface is metal - aluminium. 
+14,D,Select the elements placed in the Wall - 034 
+15,D,Select the door with the maximum thickness. 
+16,D,Select the rails composing the Stair - 001. 
+17,D,Select rooms with height larger than 200 mm.  
+18,D,Select space with volume larger than 500. 
+19,D,Get all office with netfloorarea less than 500. 
+20,D,"Find the spaces next to the room named ""004""." 
+21,D,Return the windows that has glazingareafraction = 2.45025.  
+22,D,Find all rooms with reduced area less than 300 and volume less than 700. 
+23,D,Floors with columns not locked 
+24,D,Return columns belong to Universal Column 254 x 254.  
+25,D,Get all slabs whose elevation top is lower than that of elevation of second floor . The elevation top of slab is also higher than elevation of first floor  
+26,D,Find the storey that includes the space 018. 
+27,D,Retrieve the stairs that have right rails (bRightRail). 
+28,D,Get the double swing right door made by rigid insulation. 
+29,D,Return the space with the smallest area. 
+30,D,Get the space that is near the room 014.  
+31,D,Select the slabs from Floor: Concrete 100 100. 
+32,D,Return the maximum length of all the beams. 
+33,D,Select all the components that are made of concrete. 
+34,D,Select all the walls with the net volume of 3.0334 m3. 
+35,D,The columns with length larger than 20m. 
+36,D,The slabs with composite structure type.  
+37,D,Return the columns in this building. 
+38,D,The space boundary element of the space 018. 
+39,D,Select all the single swing right windows. 
+40,D,Select the doors embedded into wall whose home story is level 1. 
+41,D,"The windows whose left corner is false, corner angle is 90, not flip." 
+42,D,The columns that satify its grossvolume < 0.3 m3 and depth > 200 mm. The column's width < 300 mm.  
+43,D,The mutual boundary element of the space 2 and space 16 . 
+44,D,Which level is the space “003” located? 
+45,D,Which spaces are adjacent to the space called “017”? 
+46,D,"The door that has uniform frame width, or non uniform sashes. " 
+47,D,The walls with outside face surface = Concrete - 02. 
+48,D,The stairs that meet tread cut fill is 25% and tread is Wood - Pine Grained Vertical . The flights offset of stair should be larger than 60 mm. 
+49,D,Building elements with existing renovation status. 
+50,D,The walls at the ground floor or 3rd floor. 
+51,D,Is the space 001 next to 002?  
+52,D,The columns in the Office spaces. The Office spaces on the first level or the second level. 
+53,D,The Corridor on the third floor. The doors placed in that Corridor. 
+54,D,Select windows that placed on Wall - 034 . The area of windows should be more than 60 . 
+55,D,The Office space on the ground floor. Elements in the Office space. Elements that contain Batt Insulation 
+56,D,The elements that used materials Background Fill [#1967]. The elements are on the second level. The elements are used in Corridor spces. 
+57,D,windows placed in external walls and have frame width of 40.0 or frame thickness > 25.0 
+58,D,Find the spaces at Level 3 that have volume < 10 and surrounded by non exterior wall. 
+59,D,Select the rooms that have external window and stay at the levels whose elevation is larger than elevation of ground floor and less than elevation of level 2? 
+60,D,Select the rooms that have columns with top offset of higher than elevation of Level 2. 
+61,D,Select the rooms that have elevation of less than the base level of corridor or office . 
+62,D,Find first floor's stairs whose No of risers in the 1st run equals to No of risers in the 2nd Run of Stair - 001  . 
+63,D,Select the non external windows that are located at Level 2 and use metal aluminium as venetian blinds box surface and have a width of 850 mm. 
+64,D,"Door in the ground floor and has elevation to story = 0 and sill height to current story = 0, and placed in walls that have a top level of 0." 
+65,D,Find the slab that has the largest net area and is placed at the level which contains walls with a length < 5.  
+66,D,Select all the slabs whose elevation bottom is larger than elevation of first level and elevation top is less than elevation of third level . 
+67,D,Return columns from Universal Column 254 x 254 and with height of higher than the elevation of Level 1.  
+68,D,"Show me the stair with rotation angle = 0, and No of risers = 18.0, and riser cover = True, and net volume > 3.0 . " 
+69,D,Windows and doors are placed in the ground floor and have a thermal transmittance of 0.0 and grazing area fraction > 2.0 .  
+70,D,Select the stairs with existing rennovation status and 24 actual number of risers or 18 numer of tread. The stair base of the stair is Concrete - 02.  
+71,D,"Choose stairs that are in the first floor or second floor, and have total depth < 2.5 or total width < 4.0. The flight width of the stair is less than 1.20 . " 
+72,D,List window whose thermal transmittance is the same as the thermal transmittance of window 506589. 
+73,D,Find the windows without sills and have gross area of 3.0 or panel height > 1.5 or width < 2.0. The height of windows is larger than the minimum height of doors. The windows and doors were put in the same wall. 
+74,D,Show me the external windows that have wallhole height larger than height of level. The windows should be contained in this level. The area of window is larger than 2.0 square meters. 
+75,D,Find stairs at the ground floor and with a real tread height equaling to the real tread height of stairs that are placed in the third floor. The stair have no riser cover. 
