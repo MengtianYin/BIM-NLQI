@@ -1,0 +1,1797 @@
+# baseURI: http://www.co-ode.org/ontologies/ont.owl/BIMNLQ
+# imports: http://bimsparql.org/query-rewriting
+# imports: http://ifcowl.openbimstandards.org/IFC2X3_TC1
+# imports: http://purl.org/dc/elements/1.1/
+# imports: http://spinrdf.org/sp
+# imports: http://spinrdf.org/spl
+
+@prefix : <http://www.co-ode.org/ontologies/ont.owl/BIMNLQ#> .
+@prefix NLnames: <http://www.co-ode.org/ontologies/ont.owl/NLnames#> .
+@prefix arg: <http://spinrdf.org/arg#> .
+@prefix expr: <http://purl.org/voc/express#> .
+@prefix express: <https://w3id.org/express#> .
+@prefix ifcowl: <http://ifcowl.openbimstandards.org/IFC2X3_TC1#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix schema: <http://bimsparql.org/schema#> .
+@prefix sp: <http://spinrdf.org/sp#> .
+@prefix spin: <http://spinrdf.org/spin#> .
+@prefix spl: <http://spinrdf.org/spl#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+ifcowl:IfcObject
+  rdf:type rdfs:Class ;
+.
+ifcowl:IfcTypeObject
+  rdf:type rdfs:Class ;
+.
+<http://www.co-ode.org/ontologies/ont.owl/BIMNLQ>
+  rdf:type owl:Ontology ;
+  owl:imports <http://bimsparql.org/query-rewriting> ;
+  owl:imports <http://ifcowl.openbimstandards.org/IFC2X3_TC1> ;
+  owl:imports <http://purl.org/dc/elements/1.1/> ;
+  owl:imports <http://spinrdf.org/sp> ;
+  owl:imports <http://spinrdf.org/spl> ;
+  owl:versionInfo "Created with TopBraid Composer" ;
+.
+:MagicProperties_1
+  rdf:type spin:MagicProperty ;
+  rdfs:subClassOf spin:MagicProperties ;
+.
+:Resource_1
+  rdf:type rdfs:Resource ;
+.
+:equalto_property
+  rdf:type spin:MagicProperty ;
+  spin:body [
+      rdf:type sp:Select ;
+      sp:resultVariables (
+          [
+            sp:varName "cp" ;
+          ]
+        ) ;
+      sp:where (
+          [
+            sp:object [
+                sp:varName "value" ;
+              ] ;
+            sp:predicate ifcowl:nominalValue_IfcPropertySingleValue ;
+            sp:subject spin:_arg1 ;
+          ]
+          [
+            sp:object [
+                sp:varName "double" ;
+              ] ;
+            sp:predicate express:hasDouble ;
+            sp:subject [
+                sp:varName "value" ;
+              ] ;
+          ]
+          [
+            sp:object [
+                sp:varName "value2" ;
+              ] ;
+            sp:predicate ifcowl:nominalValue_IfcPropertySingleValue ;
+            sp:subject [
+                sp:varName "cp" ;
+              ] ;
+          ]
+          [
+            sp:object [
+                sp:varName "double2" ;
+              ] ;
+            sp:predicate express:hasDouble ;
+            sp:subject [
+                sp:varName "value2" ;
+              ] ;
+          ]
+          [
+            rdf:type sp:Filter ;
+            sp:expression [
+                rdf:type sp:eq ;
+                sp:arg1 [
+                    sp:varName "double" ;
+                  ] ;
+                sp:arg2 [
+                    sp:varName "double2" ;
+                  ] ;
+              ] ;
+          ]
+        ) ;
+    ] ;
+  spin:constraint [
+      rdf:type spl:Argument ;
+      spl:predicate sp:arg1 ;
+      spl:valueType rdfs:Resource ;
+    ] ;
+.
+:getmateriallayerdepthvalue
+  rdf:type spin:MagicProperty ;
+  spin:body [
+      rdf:type sp:Select ;
+      sp:resultVariables (
+          [
+            sp:varName "double" ;
+          ]
+        ) ;
+      sp:where (
+          [
+            sp:object spin:_arg1 ;
+            sp:predicate ifcowl:material_IfcMaterialLayer ;
+            sp:subject [
+                sp:varName "materiallayer" ;
+              ] ;
+          ]
+          [
+            sp:object [
+                sp:varName "lengthmeasure" ;
+              ] ;
+            sp:predicate ifcowl:layerThickness_IfcMaterialLayer ;
+            sp:subject [
+                sp:varName "materiallayer" ;
+              ] ;
+          ]
+          [
+            sp:object [
+                sp:varName "double" ;
+              ] ;
+            sp:predicate express:hasDouble ;
+            sp:subject [
+                sp:varName "lengthmeasure" ;
+              ] ;
+          ]
+        ) ;
+    ] ;
+  spin:constraint [
+      rdf:type spl:Argument ;
+      spl:predicate sp:arg1 ;
+      spl:valueType rdfs:Resource ;
+    ] ;
+  rdfs:subClassOf spin:MagicProperties ;
+.
+:getpropertybooleanvalue
+  rdf:type spin:MagicProperty ;
+  spin:body [
+      rdf:type sp:Select ;
+      sp:resultVariables (
+          [
+            sp:varName "boolean" ;
+          ]
+        ) ;
+      sp:where (
+          [
+            sp:object [
+                sp:varName "label" ;
+              ] ;
+            sp:predicate ifcowl:nominalValue_IfcPropertySingleValue ;
+            sp:subject spin:_arg1 ;
+          ]
+          [
+            sp:object [
+                sp:varName "boolean" ;
+              ] ;
+            sp:predicate express:hasBoolean ;
+            sp:subject [
+                sp:varName "label" ;
+              ] ;
+          ]
+        ) ;
+    ] ;
+  spin:constraint [
+      rdf:type spl:Argument ;
+      spl:predicate sp:arg1 ;
+      spl:valueType rdfs:Resource ;
+    ] ;
+  rdfs:subClassOf spin:MagicProperties ;
+.
+:getpropertydoublevalue
+  rdf:type spin:MagicProperty ;
+  spin:body [
+      rdf:type sp:Select ;
+      sp:resultVariables (
+          [
+            sp:varName "double" ;
+          ]
+        ) ;
+      sp:where (
+          [
+            sp:object [
+                sp:varName "value" ;
+              ] ;
+            sp:predicate ifcowl:nominalValue_IfcPropertySingleValue ;
+            sp:subject spin:_arg1 ;
+          ]
+          [
+            sp:object [
+                sp:varName "double" ;
+              ] ;
+            sp:predicate express:hasDouble ;
+            sp:subject [
+                sp:varName "value" ;
+              ] ;
+          ]
+        ) ;
+    ] ;
+  spin:constraint [
+      rdf:type spl:Argument ;
+      spl:predicate sp:arg1 ;
+      spl:valueType rdfs:Resource ;
+    ] ;
+  rdfs:subClassOf spin:MagicProperties ;
+.
+:getpropertyintvalue
+  rdf:type spin:MagicProperty ;
+  spin:body [
+      rdf:type sp:Select ;
+      sp:resultVariables (
+          [
+            sp:varName "int" ;
+          ]
+        ) ;
+      sp:where (
+          [
+            sp:object [
+                sp:varName "value" ;
+              ] ;
+            sp:predicate ifcowl:nominalValue_IfcPropertySingleValue ;
+            sp:subject spin:_arg1 ;
+          ]
+          [
+            sp:object [
+                sp:varName "int" ;
+              ] ;
+            sp:predicate express:hasInteger ;
+            sp:subject [
+                sp:varName "value" ;
+              ] ;
+          ]
+        ) ;
+    ] ;
+  spin:constraint [
+      rdf:type spl:Argument ;
+      spl:predicate sp:arg1 ;
+      spl:valueType rdfs:Resource ;
+    ] ;
+  rdfs:subClassOf spin:MagicProperties ;
+.
+:getpropertystringvalue
+  rdf:type spin:MagicProperty ;
+  spin:body [
+      rdf:type sp:Select ;
+      sp:resultVariables (
+          [
+            sp:varName "string" ;
+          ]
+        ) ;
+      sp:where (
+          [
+            sp:object [
+                sp:varName "label" ;
+              ] ;
+            sp:predicate ifcowl:nominalValue_IfcPropertySingleValue ;
+            sp:subject spin:_arg1 ;
+          ]
+          [
+            sp:object [
+                sp:varName "string" ;
+              ] ;
+            sp:predicate express:hasString ;
+            sp:subject [
+                sp:varName "label" ;
+              ] ;
+          ]
+        ) ;
+    ] ;
+  spin:constraint [
+      rdf:type spl:Argument ;
+      spl:predicate sp:arg1 ;
+      spl:valueType rdfs:Resource ;
+    ] ;
+  rdfs:subClassOf spin:MagicProperties ;
+.
+:getquantitydoublevalue
+  rdf:type spin:MagicProperty ;
+  spin:body [
+      rdf:type sp:Select ;
+      sp:resultVariables (
+          [
+            sp:varName "double" ;
+          ]
+        ) ;
+      sp:where (
+          [
+            sp:object [
+                sp:varName "value" ;
+              ] ;
+            sp:predicate [
+                sp:varName "relation" ;
+              ] ;
+            sp:subject spin:_arg1 ;
+          ]
+          [
+            sp:object [
+                sp:varName "double" ;
+              ] ;
+            sp:predicate express:hasDouble ;
+            sp:subject [
+                sp:varName "value" ;
+              ] ;
+          ]
+        ) ;
+    ] ;
+  spin:constraint [
+      rdf:type spl:Argument ;
+      spl:predicate sp:arg1 ;
+      spl:valueType rdfs:Resource ;
+    ] ;
+  rdfs:subClassOf spin:MagicProperties ;
+.
+:hasExpectedServiceLife
+  rdf:type spin:MagicProperty ;
+  spin:body [
+      rdf:type sp:Select ;
+      sp:resultVariables (
+          [
+            sp:varName "year" ;
+          ]
+        ) ;
+      sp:where (
+          [
+            sp:object [
+                sp:varName "p" ;
+              ] ;
+            sp:predicate schema:hasProperty ;
+            sp:subject spin:_arg1 ;
+          ]
+          [
+            rdf:type sp:Union ;
+            sp:elements (
+                (
+                  [
+                    rdf:type sp:TriplePath ;
+                    sp:object "ExpectedServiceLife" ;
+                    sp:path [
+                        rdf:type sp:SeqPath ;
+                        sp:path1 ifcowl:name_IfcProperty ;
+                        sp:path2 express:hasString ;
+                      ] ;
+                    sp:subject [
+                        sp:varName "p" ;
+                      ] ;
+                  ]
+                )
+                (
+                  [
+                    rdf:type sp:TriplePath ;
+                    sp:object "Life expectancy" ;
+                    sp:path [
+                        rdf:type sp:SeqPath ;
+                        sp:path1 ifcowl:name_IfcProperty ;
+                        sp:path2 express:hasString ;
+                      ] ;
+                    sp:subject [
+                        sp:varName "p" ;
+                      ] ;
+                  ]
+                )
+              ) ;
+          ]
+          [
+            rdf:type sp:TriplePath ;
+            sp:object [
+                sp:varName "year" ;
+              ] ;
+            sp:path [
+                rdf:type sp:SeqPath ;
+                sp:path1 ifcowl:nominalValue_IfcPropertySingleValue ;
+                sp:path2 express:hasDouble ;
+              ] ;
+            sp:subject [
+                sp:varName "p" ;
+              ] ;
+          ]
+        ) ;
+    ] ;
+  spin:constraint [
+      rdf:type spl:Argument ;
+      spl:predicate sp:arg1 ;
+      spl:valueType rdfs:Resource ;
+    ] ;
+  rdfs:range ifcowl:IfcObject ;
+  rdfs:subClassOf spin:MagicProperties ;
+.
+:hasdirectobjecttyping
+  rdf:type spin:MagicProperty ;
+  spin:body [
+      rdf:type sp:Select ;
+      sp:resultVariables (
+          [
+            sp:varName "label" ;
+          ]
+        ) ;
+      sp:where (
+          [
+            sp:object [
+                sp:varName "label" ;
+              ] ;
+            sp:predicate ifcowl:objectType_IfcObject ;
+            sp:subject spin:_arg1 ;
+          ]
+        ) ;
+    ] ;
+  spin:constraint [
+      rdf:type spl:Argument ;
+      spl:predicate sp:arg1 ;
+      spl:valueType rdfs:Resource ;
+    ] ;
+  rdfs:subClassOf spin:MagicProperties ;
+.
+:haslayermaterial
+  rdf:type spin:MagicProperty ;
+  spin:body [
+      rdf:type sp:Select ;
+      sp:resultVariables (
+          [
+            sp:varName "mat" ;
+          ]
+        ) ;
+      sp:where (
+          [
+            sp:object ifcowl:IfcBuildingElement ;
+            sp:predicate rdf:type ;
+            sp:subject spin:_arg1 ;
+          ]
+          [
+            sp:object spin:_arg1 ;
+            sp:predicate ifcowl:relatedObjects_IfcRelAssociates ;
+            sp:subject [
+                sp:varName "r" ;
+              ] ;
+          ]
+          [
+            sp:object ifcowl:IfcRelAssociatesMaterial ;
+            sp:predicate rdf:type ;
+            sp:subject [
+                sp:varName "r" ;
+              ] ;
+          ]
+          [
+            sp:object [
+                sp:varName "matlayersetusage" ;
+              ] ;
+            sp:predicate ifcowl:relatingMaterial_IfcRelAssociatesMaterial ;
+            sp:subject [
+                sp:varName "r" ;
+              ] ;
+          ]
+          [
+            sp:object ifcowl:IfcMaterialLayerSetUsage ;
+            sp:predicate rdf:type ;
+            sp:subject [
+                sp:varName "matlayersetusage" ;
+              ] ;
+          ]
+          [
+            sp:object [
+                sp:varName "matlayerset" ;
+              ] ;
+            sp:predicate ifcowl:forLayerSet_IfcMaterialLayerSetUsage ;
+            sp:subject [
+                sp:varName "matlayersetusage" ;
+              ] ;
+          ]
+          [
+            sp:object ifcowl:IfcMaterialLayerSet ;
+            sp:predicate rdf:type ;
+            sp:subject [
+                sp:varName "matlayerset" ;
+              ] ;
+          ]
+          [
+            sp:object [
+                sp:varName "mat_list" ;
+              ] ;
+            sp:predicate NLnames:haslistelement ;
+            sp:subject [
+                sp:varName "matlayerset" ;
+              ] ;
+          ]
+          [
+            sp:object ifcowl:IfcMaterialLayer_List ;
+            sp:predicate rdf:type ;
+            sp:subject [
+                sp:varName "mat_list" ;
+              ] ;
+          ]
+          [
+            sp:object [
+                sp:varName "matlayer" ;
+              ] ;
+            sp:predicate <https://w3id.org/list#hasContents> ;
+            sp:subject [
+                sp:varName "mat_list" ;
+              ] ;
+          ]
+          [
+            sp:object ifcowl:IfcMaterialLayer ;
+            sp:predicate rdf:type ;
+            sp:subject [
+                sp:varName "matlayer" ;
+              ] ;
+          ]
+          [
+            sp:object [
+                sp:varName "mat" ;
+              ] ;
+            sp:predicate ifcowl:material_IfcMaterialLayer ;
+            sp:subject [
+                sp:varName "matlayer" ;
+              ] ;
+          ]
+          [
+            sp:object ifcowl:IfcMaterial ;
+            sp:predicate rdf:type ;
+            sp:subject [
+                sp:varName "mat" ;
+              ] ;
+          ]
+        ) ;
+    ] ;
+  spin:constraint [
+      rdf:type spl:Argument ;
+      spl:predicate sp:arg1 ;
+      spl:valueType rdfs:Resource ;
+    ] ;
+  rdfs:subClassOf spin:MagicProperties ;
+.
+:haslistedmaterial
+  rdf:type spin:MagicProperty ;
+  spin:body [
+      rdf:type sp:Select ;
+      sp:resultVariables (
+          [
+            sp:varName "mat" ;
+          ]
+        ) ;
+      sp:where (
+          [
+            sp:object ifcowl:IfcBuildingElement ;
+            sp:predicate rdf:type ;
+            sp:subject spin:_arg1 ;
+          ]
+          [
+            sp:object spin:_arg1 ;
+            sp:predicate ifcowl:relatedObjects_IfcRelAssociates ;
+            sp:subject [
+                sp:varName "r" ;
+              ] ;
+          ]
+          [
+            sp:object ifcowl:IfcRelAssociatesMaterial ;
+            sp:predicate rdf:type ;
+            sp:subject [
+                sp:varName "r" ;
+              ] ;
+          ]
+          [
+            sp:object [
+                sp:varName "matlist" ;
+              ] ;
+            sp:predicate ifcowl:relatingMaterial_IfcRelAssociatesMaterial ;
+            sp:subject [
+                sp:varName "r" ;
+              ] ;
+          ]
+          [
+            sp:object ifcowl:IfcMaterialList ;
+            sp:predicate rdf:type ;
+            sp:subject [
+                sp:varName "matlist" ;
+              ] ;
+          ]
+          [
+            sp:object [
+                sp:varName "mat_list" ;
+              ] ;
+            sp:predicate NLnames:haslistelement ;
+            sp:subject [
+                sp:varName "matlist" ;
+              ] ;
+          ]
+          [
+            sp:object ifcowl:IfcMaterial_List ;
+            sp:predicate rdf:type ;
+            sp:subject [
+                sp:varName "mat_list" ;
+              ] ;
+          ]
+          [
+            sp:object [
+                sp:varName "mat" ;
+              ] ;
+            sp:predicate <https://w3id.org/list#hasContents> ;
+            sp:subject [
+                sp:varName "mat_list" ;
+              ] ;
+          ]
+          [
+            sp:object ifcowl:IfcMaterial ;
+            sp:predicate rdf:type ;
+            sp:subject [
+                sp:varName "mat" ;
+              ] ;
+          ]
+        ) ;
+    ] ;
+  spin:constraint [
+      rdf:type spl:Argument ;
+      spl:predicate sp:arg1 ;
+      spl:valueType rdfs:Resource ;
+    ] ;
+  rdfs:subClassOf spin:MagicProperties ;
+.
+:hasmaterialtype
+  rdf:type spin:MagicProperty ;
+  spin:body [
+      rdf:type sp:Select ;
+      sp:resultVariables (
+          [
+            sp:varName "mat" ;
+          ]
+        ) ;
+      sp:where (
+          [
+            rdf:type sp:Union ;
+            sp:elements (
+                (
+                  [
+                    sp:object ifcowl:IfcBuildingElement ;
+                    sp:predicate rdf:type ;
+                    sp:subject spin:_arg1 ;
+                  ]
+                  [
+                    sp:object spin:_arg1 ;
+                    sp:predicate ifcowl:relatedObjects_IfcRelAssociates ;
+                    sp:subject [
+                        sp:varName "r" ;
+                      ] ;
+                  ]
+                  [
+                    sp:object ifcowl:IfcRelAssociatesMaterial ;
+                    sp:predicate rdf:type ;
+                    sp:subject [
+                        sp:varName "r" ;
+                      ] ;
+                  ]
+                  [
+                    sp:object [
+                        sp:varName "matlayersetusage" ;
+                      ] ;
+                    sp:predicate ifcowl:relatingMaterial_IfcRelAssociatesMaterial ;
+                    sp:subject [
+                        sp:varName "r" ;
+                      ] ;
+                  ]
+                  [
+                    sp:object ifcowl:IfcMaterialLayerSetUsage ;
+                    sp:predicate rdf:type ;
+                    sp:subject [
+                        sp:varName "matlayersetusage" ;
+                      ] ;
+                  ]
+                  [
+                    sp:object [
+                        sp:varName "matlayerset" ;
+                      ] ;
+                    sp:predicate ifcowl:forLayerSet_IfcMaterialLayerSetUsage ;
+                    sp:subject [
+                        sp:varName "matlayersetusage" ;
+                      ] ;
+                  ]
+                  [
+                    sp:object ifcowl:IfcMaterialLayerSet ;
+                    sp:predicate rdf:type ;
+                    sp:subject [
+                        sp:varName "matlayerset" ;
+                      ] ;
+                  ]
+                  [
+                    sp:object [
+                        sp:varName "mat_list" ;
+                      ] ;
+                    sp:predicate NLnames:haslistelement ;
+                    sp:subject [
+                        sp:varName "matlayerset" ;
+                      ] ;
+                  ]
+                  [
+                    sp:object ifcowl:IfcMaterialLayer_List ;
+                    sp:predicate rdf:type ;
+                    sp:subject [
+                        sp:varName "mat_list" ;
+                      ] ;
+                  ]
+                  [
+                    sp:object [
+                        sp:varName "matlayer" ;
+                      ] ;
+                    sp:predicate <https://w3id.org/list#hasContents> ;
+                    sp:subject [
+                        sp:varName "mat_list" ;
+                      ] ;
+                  ]
+                  [
+                    sp:object ifcowl:IfcMaterialLayer ;
+                    sp:predicate rdf:type ;
+                    sp:subject [
+                        sp:varName "matlayer" ;
+                      ] ;
+                  ]
+                  [
+                    sp:object [
+                        sp:varName "mat" ;
+                      ] ;
+                    sp:predicate ifcowl:material_IfcMaterialLayer ;
+                    sp:subject [
+                        sp:varName "matlayer" ;
+                      ] ;
+                  ]
+                  [
+                    sp:object ifcowl:IfcMaterial ;
+                    sp:predicate rdf:type ;
+                    sp:subject [
+                        sp:varName "mat" ;
+                      ] ;
+                  ]
+                )
+                (
+                  [
+                    sp:object ifcowl:IfcBuildingElement ;
+                    sp:predicate rdf:type ;
+                    sp:subject spin:_arg1 ;
+                  ]
+                  [
+                    sp:object spin:_arg1 ;
+                    sp:predicate ifcowl:relatedObjects_IfcRelAssociates ;
+                    sp:subject [
+                        sp:varName "r" ;
+                      ] ;
+                  ]
+                  [
+                    sp:object ifcowl:IfcRelAssociatesMaterial ;
+                    sp:predicate rdf:type ;
+                    sp:subject [
+                        sp:varName "r" ;
+                      ] ;
+                  ]
+                  [
+                    sp:object [
+                        sp:varName "matlist" ;
+                      ] ;
+                    sp:predicate ifcowl:relatingMaterial_IfcRelAssociatesMaterial ;
+                    sp:subject [
+                        sp:varName "r" ;
+                      ] ;
+                  ]
+                  [
+                    sp:object ifcowl:IfcMaterialList ;
+                    sp:predicate rdf:type ;
+                    sp:subject [
+                        sp:varName "matlist" ;
+                      ] ;
+                  ]
+                  [
+                    sp:object [
+                        sp:varName "mat_list" ;
+                      ] ;
+                    sp:predicate NLnames:haslistelement ;
+                    sp:subject [
+                        sp:varName "matlist" ;
+                      ] ;
+                  ]
+                  [
+                    sp:object ifcowl:IfcMaterial_List ;
+                    sp:predicate rdf:type ;
+                    sp:subject [
+                        sp:varName "mat_list" ;
+                      ] ;
+                  ]
+                  [
+                    sp:object [
+                        sp:varName "mat" ;
+                      ] ;
+                    sp:predicate <https://w3id.org/list#hasContents> ;
+                    sp:subject [
+                        sp:varName "mat_list" ;
+                      ] ;
+                  ]
+                  [
+                    sp:object ifcowl:IfcMaterial ;
+                    sp:predicate rdf:type ;
+                    sp:subject [
+                        sp:varName "mat" ;
+                      ] ;
+                  ]
+                )
+                (
+                  [
+                    sp:object ifcowl:IfcBuildingElement ;
+                    sp:predicate rdf:type ;
+                    sp:subject spin:_arg1 ;
+                  ]
+                  [
+                    sp:object spin:_arg1 ;
+                    sp:predicate ifcowl:relatedObjects_IfcRelAssociates ;
+                    sp:subject [
+                        sp:varName "r" ;
+                      ] ;
+                  ]
+                  [
+                    sp:object ifcowl:IfcRelAssociatesMaterial ;
+                    sp:predicate rdf:type ;
+                    sp:subject [
+                        sp:varName "r" ;
+                      ] ;
+                  ]
+                  [
+                    sp:object [
+                        sp:varName "mat" ;
+                      ] ;
+                    sp:predicate ifcowl:relatingMaterial_IfcRelAssociatesMaterial ;
+                    sp:subject [
+                        sp:varName "r" ;
+                      ] ;
+                  ]
+                  [
+                    sp:object ifcowl:IfcMaterial ;
+                    sp:predicate rdf:type ;
+                    sp:subject [
+                        sp:varName "mat" ;
+                      ] ;
+                  ]
+                )
+              ) ;
+          ]
+        ) ;
+    ] ;
+  spin:constraint [
+      rdf:type spl:Argument ;
+      spl:predicate sp:arg1 ;
+      spl:valueType rdfs:Resource ;
+    ] ;
+.
+:hasquantityintvalue
+  rdf:type spin:MagicProperty ;
+  spin:body [
+      rdf:type sp:Select ;
+      sp:resultVariables (
+          [
+            sp:varName "int" ;
+          ]
+        ) ;
+      sp:where (
+          [
+            sp:object [
+                sp:varName "value" ;
+              ] ;
+            sp:predicate [
+                sp:varName "relation" ;
+              ] ;
+            sp:subject spin:_arg1 ;
+          ]
+          [
+            sp:object [
+                sp:varName "int" ;
+              ] ;
+            sp:predicate express:hasInteger ;
+            sp:subject [
+                sp:varName "value" ;
+              ] ;
+          ]
+        ) ;
+    ] ;
+  spin:constraint [
+      rdf:type spl:Argument ;
+      spl:predicate sp:arg1 ;
+      spl:valueType rdfs:Resource ;
+    ] ;
+  rdfs:subClassOf spin:MagicProperties ;
+.
+:hasspatialcomposition
+  rdf:type spin:MagicProperty ;
+  spin:body [
+      rdf:type sp:Select ;
+      sp:resultVariables (
+          [
+            sp:varName "a2" ;
+          ]
+        ) ;
+      sp:where (
+          [
+            sp:object ifcowl:IfcRelAggregates ;
+            sp:predicate rdf:type ;
+            sp:subject [
+                sp:varName "a1" ;
+              ] ;
+          ]
+          [
+            sp:object spin:_arg1 ;
+            sp:predicate ifcowl:relatedObjects_IfcRelDecomposes ;
+            sp:subject [
+                sp:varName "a1" ;
+              ] ;
+          ]
+          [
+            sp:object [
+                sp:varName "a2" ;
+              ] ;
+            sp:predicate ifcowl:relatingObject_IfcRelDecomposes ;
+            sp:subject [
+                sp:varName "a1" ;
+              ] ;
+          ]
+        ) ;
+    ] ;
+  spin:constraint [
+      rdf:type spl:Argument ;
+      spl:predicate sp:arg1 ;
+      spl:valueType rdfs:Resource ;
+    ] ;
+  rdfs:subClassOf spin:MagicProperties ;
+.
+:hastypeenum
+  rdf:type spin:MagicProperty ;
+  spin:body [
+      rdf:type sp:Select ;
+      sp:resultVariables (
+          [
+            sp:varName "typeenum" ;
+          ]
+        ) ;
+      sp:where (
+          [
+            sp:object ifcowl:IfcRelDefinesByType ;
+            sp:predicate rdf:type ;
+            sp:subject [
+                sp:varName "a1" ;
+              ] ;
+          ]
+          [
+            sp:object spin:_arg1 ;
+            sp:predicate ifcowl:relatedObjects_IfcRelDefines ;
+            sp:subject [
+                sp:varName "a1" ;
+              ] ;
+          ]
+          [
+            sp:object [
+                sp:varName "a2" ;
+              ] ;
+            sp:predicate ifcowl:relatingType_IfcRelDefinesByType ;
+            sp:subject [
+                sp:varName "a1" ;
+              ] ;
+          ]
+          [
+            sp:object [
+                sp:varName "typeenum" ;
+              ] ;
+            sp:predicate [
+                sp:varName "enumrelation" ;
+              ] ;
+            sp:subject [
+                sp:varName "a2" ;
+              ] ;
+          ]
+          [
+            sp:object express:ENUMERATION ;
+            sp:predicate rdf:type ;
+            sp:subject [
+                sp:varName "typeenum" ;
+              ] ;
+          ]
+        ) ;
+    ] ;
+  spin:constraint [
+      rdf:type spl:Argument ;
+      spl:predicate sp:arg1 ;
+      spl:valueType rdfs:Resource ;
+    ] ;
+  rdfs:domain ifcowl:IfcObject ;
+  rdfs:range ifcowl:IfcTypeObject ;
+  rdfs:subClassOf spin:MagicProperties ;
+.
+:isdirectobjecttypeof
+  rdf:type spin:MagicProperty ;
+  spin:body [
+      rdf:type sp:Select ;
+      sp:resultVariables (
+          [
+            sp:varName "object" ;
+          ]
+        ) ;
+      sp:where (
+          [
+            sp:object spin:_arg1 ;
+            sp:predicate ifcowl:objectType_IfcObject ;
+            sp:subject [
+                sp:varName "object" ;
+              ] ;
+          ]
+        ) ;
+    ] ;
+  spin:constraint [
+      rdf:type spl:Argument ;
+      spl:predicate sp:arg1 ;
+      spl:valueType rdfs:Resource ;
+    ] ;
+  rdfs:subClassOf spin:MagicProperties ;
+.
+:isifctypeobjectof
+  rdf:type spin:MagicProperty ;
+  spin:body [
+      rdf:type sp:Select ;
+      sp:resultVariables (
+          [
+            sp:varName "a2" ;
+          ]
+        ) ;
+      sp:where (
+          [
+            sp:object ifcowl:IfcRelDefinesByType ;
+            sp:predicate rdf:type ;
+            sp:subject [
+                sp:varName "a1" ;
+              ] ;
+          ]
+          [
+            sp:object [
+                sp:varName "a2" ;
+              ] ;
+            sp:predicate ifcowl:relatedObjects_IfcRelDefines ;
+            sp:subject [
+                sp:varName "a1" ;
+              ] ;
+          ]
+          [
+            sp:object spin:_arg1 ;
+            sp:predicate ifcowl:relatingType_IfcRelDefinesByType ;
+            sp:subject [
+                sp:varName "a1" ;
+              ] ;
+          ]
+        ) ;
+    ] ;
+  spin:constraint [
+      rdf:type spl:Argument ;
+      spl:predicate sp:arg1 ;
+      spl:valueType rdfs:Resource ;
+    ] ;
+  rdfs:subClassOf spin:MagicProperties ;
+.
+:ismaterialof
+  rdf:type spin:MagicProperty ;
+  spin:body [
+      rdf:type sp:Select ;
+      sp:resultVariables (
+          [
+            sp:varName "a2" ;
+          ]
+        ) ;
+      sp:where (
+          [
+            rdf:type sp:Union ;
+            sp:elements (
+                (
+                  [
+                    sp:object ifcowl:IfcRelAssociatesMaterial ;
+                    sp:predicate rdf:type ;
+                    sp:subject [
+                        sp:varName "a1" ;
+                      ] ;
+                  ]
+                  [
+                    sp:object [
+                        sp:varName "a2" ;
+                      ] ;
+                    sp:predicate ifcowl:relatedObjects_IfcRelAssociates ;
+                    sp:subject [
+                        sp:varName "a1" ;
+                      ] ;
+                  ]
+                  [
+                    sp:object spin:_arg1 ;
+                    sp:predicate ifcowl:relatingMaterial_IfcRelAssociatesMaterial ;
+                    sp:subject [
+                        sp:varName "a1" ;
+                      ] ;
+                  ]
+                )
+                (
+                  [
+                    sp:object ifcowl:IfcBuildingElement ;
+                    sp:predicate rdf:type ;
+                    sp:subject [
+                        sp:varName "a2" ;
+                      ] ;
+                  ]
+                  [
+                    sp:object [
+                        sp:varName "a2" ;
+                      ] ;
+                    sp:predicate ifcowl:relatedObjects_IfcRelAssociates ;
+                    sp:subject [
+                        sp:varName "r" ;
+                      ] ;
+                  ]
+                  [
+                    sp:object ifcowl:IfcRelAssociatesMaterial ;
+                    sp:predicate rdf:type ;
+                    sp:subject [
+                        sp:varName "r" ;
+                      ] ;
+                  ]
+                  [
+                    sp:object [
+                        sp:varName "matlayersetusage" ;
+                      ] ;
+                    sp:predicate ifcowl:relatingMaterial_IfcRelAssociatesMaterial ;
+                    sp:subject [
+                        sp:varName "r" ;
+                      ] ;
+                  ]
+                  [
+                    sp:object ifcowl:IfcMaterialLayerSetUsage ;
+                    sp:predicate rdf:type ;
+                    sp:subject [
+                        sp:varName "matlayersetusage" ;
+                      ] ;
+                  ]
+                  [
+                    sp:object [
+                        sp:varName "matlayerset" ;
+                      ] ;
+                    sp:predicate ifcowl:forLayerSet_IfcMaterialLayerSetUsage ;
+                    sp:subject [
+                        sp:varName "matlayersetusage" ;
+                      ] ;
+                  ]
+                  [
+                    sp:object ifcowl:IfcMaterialLayerSet ;
+                    sp:predicate rdf:type ;
+                    sp:subject [
+                        sp:varName "matlayerset" ;
+                      ] ;
+                  ]
+                  [
+                    sp:object [
+                        sp:varName "mat_list" ;
+                      ] ;
+                    sp:predicate NLnames:haslistelement ;
+                    sp:subject [
+                        sp:varName "matlayerset" ;
+                      ] ;
+                  ]
+                  [
+                    sp:object ifcowl:IfcMaterialLayer_List ;
+                    sp:predicate rdf:type ;
+                    sp:subject [
+                        sp:varName "mat_list" ;
+                      ] ;
+                  ]
+                  [
+                    sp:object [
+                        sp:varName "matlayer" ;
+                      ] ;
+                    sp:predicate <https://w3id.org/list#hasContents> ;
+                    sp:subject [
+                        sp:varName "mat_list" ;
+                      ] ;
+                  ]
+                  [
+                    sp:object ifcowl:IfcMaterialLayer ;
+                    sp:predicate rdf:type ;
+                    sp:subject [
+                        sp:varName "matlayer" ;
+                      ] ;
+                  ]
+                  [
+                    sp:object [
+                        sp:varName "a2" ;
+                      ] ;
+                    sp:predicate ifcowl:material_IfcMaterialLayer ;
+                    sp:subject [
+                        sp:varName "matlayer" ;
+                      ] ;
+                  ]
+                  [
+                    sp:object ifcowl:IfcMaterial ;
+                    sp:predicate rdf:type ;
+                    sp:subject [
+                        sp:varName "a2" ;
+                      ] ;
+                  ]
+                )
+                ()
+              ) ;
+          ]
+        ) ;
+    ] ;
+  spin:constraint [
+      rdf:type spl:Argument ;
+      spl:predicate sp:arg1 ;
+      spl:valueType rdfs:Resource ;
+    ] ;
+  rdfs:subClassOf spin:MagicProperties ;
+.
+:ismaterialtypeof
+  rdf:type spin:MagicProperty ;
+  spin:body [
+      rdf:type sp:Select ;
+      sp:resultVariables (
+          [
+            sp:varName "a2" ;
+          ]
+        ) ;
+      sp:where (
+          [
+            rdf:type sp:Union ;
+            sp:elements (
+                (
+                  [
+                    sp:object ifcowl:IfcRelAssociatesMaterial ;
+                    sp:predicate rdf:type ;
+                    sp:subject [
+                        sp:varName "a1" ;
+                      ] ;
+                  ]
+                  [
+                    sp:object [
+                        sp:varName "a2" ;
+                      ] ;
+                    sp:predicate ifcowl:relatedObjects_IfcRelAssociates ;
+                    sp:subject [
+                        sp:varName "a1" ;
+                      ] ;
+                  ]
+                  [
+                    sp:object spin:_arg1 ;
+                    sp:predicate ifcowl:relatingMaterial_IfcRelAssociatesMaterial ;
+                    sp:subject [
+                        sp:varName "a1" ;
+                      ] ;
+                  ]
+                )
+                (
+                  [
+                    sp:object ifcowl:IfcBuildingElement ;
+                    sp:predicate rdf:type ;
+                    sp:subject [
+                        sp:varName "a2" ;
+                      ] ;
+                  ]
+                  [
+                    sp:object [
+                        sp:varName "a2" ;
+                      ] ;
+                    sp:predicate ifcowl:relatedObjects_IfcRelAssociates ;
+                    sp:subject [
+                        sp:varName "r" ;
+                      ] ;
+                  ]
+                  [
+                    sp:object ifcowl:IfcRelAssociatesMaterial ;
+                    sp:predicate rdf:type ;
+                    sp:subject [
+                        sp:varName "r" ;
+                      ] ;
+                  ]
+                  [
+                    sp:object [
+                        sp:varName "matlayersetusage" ;
+                      ] ;
+                    sp:predicate ifcowl:relatingMaterial_IfcRelAssociatesMaterial ;
+                    sp:subject [
+                        sp:varName "r" ;
+                      ] ;
+                  ]
+                  [
+                    sp:object ifcowl:IfcMaterialLayerSetUsage ;
+                    sp:predicate rdf:type ;
+                    sp:subject [
+                        sp:varName "matlayersetusage" ;
+                      ] ;
+                  ]
+                  [
+                    sp:object [
+                        sp:varName "matlayerset" ;
+                      ] ;
+                    sp:predicate ifcowl:forLayerSet_IfcMaterialLayerSetUsage ;
+                    sp:subject [
+                        sp:varName "matlayersetusage" ;
+                      ] ;
+                  ]
+                  [
+                    sp:object ifcowl:IfcMaterialLayerSet ;
+                    sp:predicate rdf:type ;
+                    sp:subject [
+                        sp:varName "matlayerset" ;
+                      ] ;
+                  ]
+                  [
+                    sp:object [
+                        sp:varName "mat_list" ;
+                      ] ;
+                    sp:predicate NLnames:haslistelement ;
+                    sp:subject [
+                        sp:varName "matlayerset" ;
+                      ] ;
+                  ]
+                  [
+                    sp:object ifcowl:IfcMaterialLayer_List ;
+                    sp:predicate rdf:type ;
+                    sp:subject [
+                        sp:varName "mat_list" ;
+                      ] ;
+                  ]
+                  [
+                    sp:object [
+                        sp:varName "matlayer" ;
+                      ] ;
+                    sp:predicate <https://w3id.org/list#hasContents> ;
+                    sp:subject [
+                        sp:varName "mat_list" ;
+                      ] ;
+                  ]
+                  [
+                    sp:object ifcowl:IfcMaterialLayer ;
+                    sp:predicate rdf:type ;
+                    sp:subject [
+                        sp:varName "matlayer" ;
+                      ] ;
+                  ]
+                  [
+                    sp:object [
+                        sp:varName "a2" ;
+                      ] ;
+                    sp:predicate ifcowl:material_IfcMaterialLayer ;
+                    sp:subject [
+                        sp:varName "matlayer" ;
+                      ] ;
+                  ]
+                  [
+                    sp:object ifcowl:IfcMaterial ;
+                    sp:predicate rdf:type ;
+                    sp:subject [
+                        sp:varName "a2" ;
+                      ] ;
+                  ]
+                )
+                ()
+              ) ;
+          ]
+        ) ;
+    ] ;
+  spin:constraint [
+      rdf:type spl:Argument ;
+      spl:predicate sp:arg1 ;
+      spl:valueType rdfs:Resource ;
+    ] ;
+.
+:ispropertyof
+  rdf:type spin:MagicProperty ;
+  spin:body [
+      rdf:type sp:Select ;
+      sp:resultVariables (
+          [
+            sp:varName "object" ;
+          ]
+        ) ;
+      sp:where (
+          [
+            sp:object [
+                sp:varName "pSet" ;
+              ] ;
+            sp:predicate schema:hasPropertySet ;
+            sp:subject [
+                sp:varName "object" ;
+              ] ;
+          ]
+          [
+            sp:object spin:_arg1 ;
+            sp:predicate ifcowl:hasProperties_IfcPropertySet ;
+            sp:subject [
+                sp:varName "pSet" ;
+              ] ;
+          ]
+        ) ;
+    ] ;
+  spin:constraint [
+      rdf:type spl:Argument ;
+      spl:predicate sp:arg1 ;
+      spl:valueType rdfs:Resource ;
+    ] ;
+  rdfs:subClassOf spin:MagicProperties ;
+.
+:isquantityof
+  rdf:type spin:MagicProperty ;
+  spin:body [
+      rdf:type sp:Select ;
+      sp:resultVariables (
+          [
+            sp:varName "a15" ;
+          ]
+        ) ;
+      sp:where (
+          [
+            sp:object [
+                sp:varName "a2" ;
+              ] ;
+            sp:predicate schema:hasQuantitySet ;
+            sp:subject [
+                sp:varName "a15" ;
+              ] ;
+          ]
+          [
+            sp:object spin:_arg1 ;
+            sp:predicate ifcowl:quantities_IfcElementQuantity ;
+            sp:subject [
+                sp:varName "a2" ;
+              ] ;
+          ]
+        ) ;
+    ] ;
+  spin:constraint [
+      rdf:type spl:Argument ;
+      spl:predicate sp:arg1 ;
+      spl:valueType rdfs:Resource ;
+    ] ;
+  rdfs:subClassOf spin:MagicProperties ;
+.
+:isspaceboundaryof
+  rdf:type spin:MagicProperty ;
+  spin:body [
+      rdf:type sp:Select ;
+      sp:resultVariables (
+          [
+            sp:varName "a2" ;
+          ]
+        ) ;
+      sp:where (
+          [
+            sp:object ifcowl:IfcRelSpaceBoundary ;
+            sp:predicate rdf:type ;
+            sp:subject [
+                sp:varName "a1" ;
+              ] ;
+          ]
+          [
+            sp:object spin:_arg1 ;
+            sp:predicate ifcowl:relatedBuildingElement_IfcRelSpaceBoundary ;
+            sp:subject [
+                sp:varName "a1" ;
+              ] ;
+          ]
+          [
+            sp:object [
+                sp:varName "a2" ;
+              ] ;
+            sp:predicate ifcowl:relatingSpace_IfcRelSpaceBoundary ;
+            sp:subject [
+                sp:varName "a1" ;
+              ] ;
+          ]
+        ) ;
+    ] ;
+  spin:constraint [
+      rdf:type spl:Argument ;
+      spl:predicate sp:arg1 ;
+      spl:valueType rdfs:Resource ;
+    ] ;
+  rdfs:subClassOf spin:MagicProperties ;
+.
+:istypeenumof
+  rdf:type spin:MagicProperty ;
+  spin:body [
+      rdf:type sp:Select ;
+      sp:resultVariables (
+          [
+            sp:varName "object" ;
+          ]
+        ) ;
+      sp:where (
+          [
+            sp:object ifcowl:IfcRelDefinesByType ;
+            sp:predicate rdf:type ;
+            sp:subject [
+                sp:varName "a1" ;
+              ] ;
+          ]
+          [
+            sp:object [
+                sp:varName "object" ;
+              ] ;
+            sp:predicate ifcowl:relatedObjects_IfcRelDefines ;
+            sp:subject [
+                sp:varName "a1" ;
+              ] ;
+          ]
+          [
+            sp:object [
+                sp:varName "a2" ;
+              ] ;
+            sp:predicate ifcowl:relatingType_IfcRelDefinesByType ;
+            sp:subject [
+                sp:varName "a1" ;
+              ] ;
+          ]
+          [
+            sp:object spin:_arg1 ;
+            sp:predicate [
+                sp:varName "enumrelation" ;
+              ] ;
+            sp:subject [
+                sp:varName "a2" ;
+              ] ;
+          ]
+          [
+            sp:object express:ENUMERATION ;
+            sp:predicate rdf:type ;
+            sp:subject spin:_arg1 ;
+          ]
+        ) ;
+    ] ;
+  spin:constraint [
+      rdf:type spl:Argument ;
+      spl:predicate sp:arg1 ;
+      spl:valueType rdfs:Resource ;
+    ] ;
+  rdfs:subClassOf spin:MagicProperties ;
+.
+:largerthan_property
+  rdf:type spin:MagicProperty ;
+  spin:body [
+      rdf:type sp:Select ;
+      sp:resultVariables (
+          [
+            sp:varName "cp" ;
+          ]
+        ) ;
+      sp:where (
+          [
+            sp:object [
+                sp:varName "value" ;
+              ] ;
+            sp:predicate ifcowl:nominalValue_IfcPropertySingleValue ;
+            sp:subject spin:_arg1 ;
+          ]
+          [
+            sp:object [
+                sp:varName "double" ;
+              ] ;
+            sp:predicate express:hasDouble ;
+            sp:subject [
+                sp:varName "value" ;
+              ] ;
+          ]
+          [
+            sp:object [
+                sp:varName "value2" ;
+              ] ;
+            sp:predicate ifcowl:nominalValue_IfcPropertySingleValue ;
+            sp:subject [
+                sp:varName "cp" ;
+              ] ;
+          ]
+          [
+            sp:object [
+                sp:varName "double2" ;
+              ] ;
+            sp:predicate express:hasDouble ;
+            sp:subject [
+                sp:varName "value2" ;
+              ] ;
+          ]
+          [
+            rdf:type sp:Filter ;
+            sp:expression [
+                rdf:type sp:gt ;
+                sp:arg1 [
+                    sp:varName "double" ;
+                  ] ;
+                sp:arg2 [
+                    sp:varName "double2" ;
+                  ] ;
+              ] ;
+          ]
+        ) ;
+    ] ;
+.
+:lessthan_property
+  rdf:type spin:MagicProperty ;
+  spin:body [
+      rdf:type sp:Select ;
+      sp:resultVariables (
+          [
+            sp:varName "cp" ;
+          ]
+        ) ;
+      sp:where (
+          [
+            sp:object [
+                sp:varName "value" ;
+              ] ;
+            sp:predicate ifcowl:nominalValue_IfcPropertySingleValue ;
+            sp:subject spin:_arg1 ;
+          ]
+          [
+            sp:object [
+                sp:varName "double" ;
+              ] ;
+            sp:predicate express:hasDouble ;
+            sp:subject [
+                sp:varName "value" ;
+              ] ;
+          ]
+          [
+            sp:object [
+                sp:varName "value2" ;
+              ] ;
+            sp:predicate ifcowl:nominalValue_IfcPropertySingleValue ;
+            sp:subject [
+                sp:varName "cp" ;
+              ] ;
+          ]
+          [
+            sp:object [
+                sp:varName "double2" ;
+              ] ;
+            sp:predicate express:hasDouble ;
+            sp:subject [
+                sp:varName "value2" ;
+              ] ;
+          ]
+          [
+            rdf:type sp:Filter ;
+            sp:expression [
+                rdf:type sp:lt ;
+                sp:arg1 [
+                    sp:varName "double" ;
+                  ] ;
+                sp:arg2 [
+                    sp:varName "double2" ;
+                  ] ;
+              ] ;
+          ]
+        ) ;
+    ] ;
+  spin:constraint [
+      rdf:type spl:Argument ;
+      spl:predicate sp:arg1 ;
+      spl:valueType rdfs:Resource ;
+    ] ;
+.
+:nolargerthan_property
+  rdf:type spin:MagicProperty ;
+  spin:body [
+      rdf:type sp:Select ;
+      sp:resultVariables (
+          [
+            sp:varName "cp" ;
+          ]
+        ) ;
+      sp:where (
+          [
+            sp:object [
+                sp:varName "value" ;
+              ] ;
+            sp:predicate ifcowl:nominalValue_IfcPropertySingleValue ;
+            sp:subject spin:_arg1 ;
+          ]
+          [
+            sp:object [
+                sp:varName "double" ;
+              ] ;
+            sp:predicate express:hasDouble ;
+            sp:subject [
+                sp:varName "value" ;
+              ] ;
+          ]
+          [
+            sp:object [
+                sp:varName "value2" ;
+              ] ;
+            sp:predicate ifcowl:nominalValue_IfcPropertySingleValue ;
+            sp:subject [
+                sp:varName "cp" ;
+              ] ;
+          ]
+          [
+            sp:object [
+                sp:varName "double2" ;
+              ] ;
+            sp:predicate express:hasDouble ;
+            sp:subject [
+                sp:varName "value2" ;
+              ] ;
+          ]
+          [
+            rdf:type sp:Filter ;
+            sp:expression [
+                rdf:type sp:le ;
+                sp:arg1 [
+                    sp:varName "double" ;
+                  ] ;
+                sp:arg2 [
+                    sp:varName "double2" ;
+                  ] ;
+              ] ;
+          ]
+        ) ;
+    ] ;
+.
+:nolessthan_property
+  rdf:type spin:MagicProperty ;
+  spin:body [
+      rdf:type sp:Select ;
+      sp:resultVariables (
+          [
+            sp:varName "cp" ;
+          ]
+        ) ;
+      sp:where (
+          [
+            sp:object [
+                sp:varName "value" ;
+              ] ;
+            sp:predicate ifcowl:nominalValue_IfcPropertySingleValue ;
+            sp:subject spin:_arg1 ;
+          ]
+          [
+            sp:object [
+                sp:varName "double" ;
+              ] ;
+            sp:predicate express:hasDouble ;
+            sp:subject [
+                sp:varName "value" ;
+              ] ;
+          ]
+          [
+            sp:object [
+                sp:varName "value2" ;
+              ] ;
+            sp:predicate ifcowl:nominalValue_IfcPropertySingleValue ;
+            sp:subject [
+                sp:varName "cp" ;
+              ] ;
+          ]
+          [
+            sp:object [
+                sp:varName "double2" ;
+              ] ;
+            sp:predicate express:hasDouble ;
+            sp:subject [
+                sp:varName "value2" ;
+              ] ;
+          ]
+          [
+            rdf:type sp:Filter ;
+            sp:expression [
+                rdf:type sp:ge ;
+                sp:arg1 [
+                    sp:varName "double" ;
+                  ] ;
+                sp:arg2 [
+                    sp:varName "double2" ;
+                  ] ;
+              ] ;
+          ]
+        ) ;
+    ] ;
+  spin:constraint [
+      rdf:type spl:Argument ;
+      spl:predicate sp:arg1 ;
+      spl:valueType rdfs:Resource ;
+    ] ;
+.
