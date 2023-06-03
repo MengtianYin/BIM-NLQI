@@ -11,4 +11,4 @@ For reuse of the BIM-NLQ dataset for testing, manual check is required to compar
 
 The ontology files in the folder only include the INLE ontology and the populated RDF files placed in each model folder (A,B,C,D). The INLE ontology resued the ontological resource from the ifcOWL ontology (IFC2x3 TC1), which can be found in https://technical.buildingsmart.org/standards/ifc/ifc-schema-specifications/.   
 
-The file "bimnlq.ttl" contains all the SPIN reasoning rules that were created in this study. Additionally, this study also resue the reasoning rules from the BIMSPARQL framework, which can be found in https://github.com/BenzclyZhang/BimSPARQL .
+The file "bimnlq.ttl" contains all the SPIN reasoning rules that were created in this study. Additionally, this study also reuses the reasoning rules from the BIMSPARQL framework, which can be found in https://github.com/BenzclyZhang/BimSPARQL .
